@@ -107,8 +107,7 @@ export type SettingName =
   | "application-font"
   | "available-fonts"
   | "enable-query-caching"
-  | "start-of-week"
-  | "report-timezone-short";
+  | "start-of-week";
 
 type SettingsMap = Record<SettingName, any>; // provides access to Metabase application settings
 
@@ -241,10 +240,6 @@ class Settings {
 
   deprecationNoticeEnabled() {
     return this.currentVersion() !== this.deprecationNoticeVersion();
-  }
-
-  reportTimezoneShort() {
-    return this.get("report-timezone-short");
   }
 
   token() {
