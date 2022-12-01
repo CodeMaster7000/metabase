@@ -105,7 +105,6 @@ export type SettingName =
   | "metabase-store-managed"
   | "application-colors"
   | "application-font"
-  | "application-name"
   | "report-timezone-long"
   | "available-fonts"
   | "enable-query-caching"
