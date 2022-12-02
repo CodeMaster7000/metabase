@@ -4,10 +4,7 @@
             [java-time :as t]
             [metabase.driver :as driver]
             [metabase.models :refer [Card]]
-<<<<<<< HEAD
             [metabase.query-processor.timezone :as qp.timezone]
-=======
->>>>>>> 80aad61a4c (Cleanup `report-timezone-long`)
             [metabase.test :as mt]
             [metabase.util.date-2 :as u.date]))
 
@@ -423,20 +420,12 @@
   (mt/test-drivers (mt/normal-drivers-with-feature :now :datetime-diff)
     (testing "should work as an argument to datetime-diff"
       (is (= 0
-<<<<<<< HEAD
              (->> (mt/run-mbql-query venues
                     {:expressions {"1" [:datetime-diff [:now] [:now] :month]}
                      :fields [[:expression "1"]]
                      :limit  1})
                   (mt/formatted-rows [int])
                   ffirst)))))
-=======
-             (-> (mt/run-mbql-query venues
-                   {:expressions {"1" [:datetime-diff [:now] [:now] :month]}
-                    :fields [[:expression "1"]]
-                    :limit  1})
-                 mt/rows ffirst)))))
->>>>>>> 80aad61a4c (Cleanup `report-timezone-long`)
   (mt/test-drivers (mt/normal-drivers-with-feature :now :date-arithmetics :datetime-diff)
     (testing "should work in combination with datetime-diff and date-arithmetics"
       (is (= [1 1]
