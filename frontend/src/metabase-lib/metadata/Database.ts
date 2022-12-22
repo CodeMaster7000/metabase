@@ -1,6 +1,6 @@
 // eslint-disable-next-line @typescript-eslint/ban-ts-comment
 // @ts-nocheck
-import { NativePermissions } from "metabase-types/api";
+import { NativePermissions, StructuredQuery } from "metabase-types/api";
 import { generateSchemaId } from "metabase-lib/metadata/utils/schema";
 import { createLookupByProperty, memoizeClass } from "metabase-lib/utils";
 import Question from "../Question";
@@ -123,7 +123,7 @@ class DatabaseInner extends Base {
   }
 
   question(
-    query = {
+    query: StructuredQuery = {
       "source-table": null,
     },
   ) {
